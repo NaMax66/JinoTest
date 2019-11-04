@@ -1,9 +1,34 @@
+/*Variables*/
+$grid-width: 90%;
+$grid-max-width: 109.2rem;
+$grid-min-width: 81.9rem;
+
+$gutter-vertical: 1rem;
+
+/*я вычислил, что 12px промежуток это 15% от 80рх ширины
+то же и 9рх - 15% от 60рх. Значит ширина колонны -
+12х + 11 * 0.15х = 100%
+Х = 7.32601%*/
+$column-width: 7.32601%;
+$grid-gap: calc(#{$column-width} * .15);
+
+
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-h1 {
-  background-color: red;
+html {
+  /*Сделал 1rem = 10px для удобства подсчетов*/
+  font-size: 62.5%;
 }
+

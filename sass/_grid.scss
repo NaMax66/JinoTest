@@ -1,0 +1,35 @@
+.flex-container {
+  position: relative;
+  min-width: $grid-min-width;
+  max-width: $grid-max-width;
+  width: $grid-width;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.pseudo_row {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  color: orange;
+}
+
+/*Общие настройки для всех колонок сетки*/
+[class^="col-"] {
+  float: left;
+
+  /*Убираем отступ у последнего элемента*/
+  &:not(:last-child) {
+    margin-right: $grid-gap;
+  }
+}
+
+.col-1-of-12 {
+  border-left: 1px solid orange;
+  border-right: 1px solid orange;
+  width: $column-width;
+  height: 100%;
+}
+
+
+
