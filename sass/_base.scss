@@ -1,17 +1,18 @@
 /*Variables*/
-$grid-width: 90%;
-$grid-max-width: 109.2rem;
-$grid-min-width: 81.9rem;
+$container-width: 90%;
 
-$gutter-vertical: 1rem;
+$row-max-width: 109.2rem;
+$row-medium-width: 95.55rem;
+$row-min-width: 81.9rem;
 
-/*я вычислил, что 12px промежуток это 15% от 80рх ширины
-то же и 9рх - 15% от 60рх. Значит ширина колонны -
-12х + 11 * 0.15х = 100%
-Х = 7.32601%*/
+$item-max-margin: 6px;
+$item-medium-margin: 5.25px;
+$item-min-margin: 4.5px;
+
 $column-width: 7.32601%;
-$grid-gap: calc(#{$column-width} * .15);
 
+
+/*при ширине поля в 1092рх отрицательные марджины слева и справа по 6px в процентах это 0,54945*/
 
 
 @mixin clearfix {
@@ -22,6 +23,7 @@ $grid-gap: calc(#{$column-width} * .15);
   }
 }
 
+/*General settings*/
 * {
   margin: 0;
   padding: 0;
@@ -32,3 +34,27 @@ html {
   font-size: 62.5%;
 }
 
+/*Utility classes*/
+
+.u-hide {
+  display: none !important;
+}
+
+.u-btn {
+  position: absolute;
+  right: 0;
+  border: 2px solid #333;
+  color: #333;
+  padding: .5rem;
+
+  &:hover {
+    background-color: rgba(51, 51, 51, 0.49);
+    color: #fff;
+    border: 2px solid #fff;
+
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+}

@@ -1,9 +1,7 @@
 @charset "UTF-8";
 /*Variables*/
-/*я вычислил, что 12px промежуток это 15% от 80рх ширины
-то же и 9рх - 15% от 60рх. Значит ширина колонны -
-12х + 11 * 0.15х = 100%
-Х = 7.32601%*/
+/*при ширине поля в 1092рх отрицательные марджины слева и справа по 6px в процентах это 0,54945*/
+/*General settings*/
 * {
   margin: 0;
   padding: 0;
@@ -13,14 +11,68 @@ html {
   /*Сделал 1rem = 10px для удобства подсчетов*/
   font-size: 62.5%; }
 
+/*Utility classes*/
+.u-hide {
+  display: none !important; }
+
+.u-btn {
+  position: absolute;
+  right: 0;
+  border: 2px solid #333;
+  color: #333;
+  padding: .5rem; }
+  .u-btn:hover {
+    background-color: rgba(51, 51, 51, 0.49);
+    color: #fff;
+    border: 2px solid #fff; }
+  .u-btn:active {
+    transform: translateY(2px); }
+
 .flex-container {
   position: relative;
   min-width: 81.9rem;
   max-width: 109.2rem;
   width: 90%;
-  height: 100vh;
   margin: 0 auto; }
 
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -4.5px; }
+
+.item-1-12 {
+  width: calc(100% / 12 - 4.5px * 2);
+  padding: 1rem;
+  margin: 0 4.5px; }
+
+[class^="item-"] {
+  background-color: orange;
+  /*&:not(:last-child) {
+    margin-right: $grid-gap;
+  }*/ }
+
+@media (min-width: 1132px) {
+  .row {
+    margin: -6px; }
+  .item-1-12 {
+    width: calc(100% / 12 - 6px * 2);
+    margin: 0 6px; } }
+
+@media (max-width: 1132px) and (min-width: 995.5px) {
+  .row {
+    margin: -5.25px; }
+  .item-1-12 {
+    width: calc(100% / 12 - 5.25px * 2);
+    margin: 0 5.25px; } }
+
+@media (max-width: 995.5px) and (min-width: 859px) {
+  .row {
+    margin: -4.5px; }
+  .item-1-12 {
+    width: calc(100% / 12 - 4.5px * 2);
+    margin: 0 4.5px; } }
+
+/*Служебная сетка*/
 .pseudo_row {
   position: absolute;
   height: 100%;
@@ -34,12 +86,17 @@ html {
   [class^="col-"]:not(:last-child) {
     margin-right: calc(7.32601% * .15); }
 
+/*я вычислил, что 12px промежуток это 15% от 80рх ширины
+то же и 9рх - 15% от 60рх. Значит ширина колонны -
+12х + 11 * 0.15х = 100%
+Х = 7.32601%*/
 .col-1-of-12 {
   border-left: 1px solid orange;
   border-right: 1px solid orange;
-  width: 7.32601%;
+  width: calc(100% / (12 + 11 * .15));
   height: 100%; }
 
+/*Служебная сетка. Конец*/
 .top {
   font-family: "PT Sans", sans-serif;
   font-weight: bold;

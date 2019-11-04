@@ -1,12 +1,66 @@
 .flex-container {
   position: relative;
-  min-width: $grid-min-width;
-  max-width: $grid-max-width;
-  width: $grid-width;
-  height: 100vh;
+  min-width: $row-min-width;
+  max-width: $row-max-width;
+  width: $container-width;
   margin: 0 auto;
 }
 
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -$item-min-margin;
+}
+
+.item-1-12 {
+  width: calc(100% / 12 - #{$item-min-margin} * 2);
+  padding: 1rem;
+  margin: 0 $item-min-margin;
+}
+
+[class^="item-"] {
+  background-color: orange;
+  /*&:not(:last-child) {
+    margin-right: $grid-gap;
+  }*/
+}
+
+@media (min-width: 1132px) {
+  .row {
+    margin: 0 -$item-max-margin;
+  }
+
+  .item-1-12 {
+    width: calc(100% / 12 - #{$item-max-margin} * 2);
+    margin: 0 $item-max-margin;
+  }
+}
+
+@media (max-width: 1132px) and (min-width: 995.5px) {
+  .row {
+    margin: 0 -$item-medium-margin;
+  }
+
+  .item-1-12 {
+    width: calc(100% / 12 - #{$item-medium-margin} * 2);
+    margin: 0 $item-medium-margin;
+  }
+}
+
+
+@media (max-width: 995.5px) and (min-width: 859px) {
+  .row {
+    margin: 0 -$item-min-margin;
+  }
+
+  .item-1-12 {
+    width: calc(100% / 12 - #{$item-min-margin} * 2);
+    margin: 0 $item-min-margin;
+  }
+}
+
+
+/*Служебная сетка*/
 .pseudo_row {
   position: absolute;
   height: 100%;
@@ -20,16 +74,22 @@
 
   /*Убираем отступ у последнего элемента*/
   &:not(:last-child) {
-    margin-right: $grid-gap;
+    margin-right: calc(#{$column-width} * .15);
   }
 }
 
+/*я вычислил, что 12px промежуток это 15% от 80рх ширины
+то же и 9рх - 15% от 60рх. Значит ширина колонны -
+12х + 11 * 0.15х = 100%
+Х = 7.32601%*/
 .col-1-of-12 {
   border-left: 1px solid orange;
   border-right: 1px solid orange;
-  width: $column-width;
+  width: calc(100% / (12 + 11 * .15));
   height: 100%;
 }
+
+/*Служебная сетка. Конец*/
 
 
 
