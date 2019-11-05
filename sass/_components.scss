@@ -1,6 +1,7 @@
 .header {
   /*убираем отступ для фона*/
   background-image: url(../img/background1.jpg);
+  height: 84.5rem;
   min-height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
@@ -38,26 +39,113 @@
     margin-top: 3px;
   }
 
-  .top--fair-price {
-
-  }
 }
 
 .main-title {
-  color: white;
+  font-family: "PT Sans Caption", sans-serif;
+  color: #fff;
+  white-space: nowrap;
+  letter-spacing: .05rem;
+  text-align: center;
+  font-size: 8rem;
+
+  margin-top: 13rem;
+
 }
 
 .domain_check {
+  margin-top: 7.5rem;
+  position: relative;
   .domain_check-label {
     display: none;
   }
 
   #domain_check-input {
+    display: block;
+    width: 100%;
+    height: 8.2rem;
+    border-radius: .8rem;
+    border: none;
 
+    /*чтобы нижний инфо-блок спрятался*/
+    opacity: 0.99;
+
+    font-size: 2.4rem;
+    padding: 4rem;
   }
   .domain_check-btn {
+    $back_color: #5f6062;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    border-radius: .8rem;
+    color: white;
+    font-size: 2.2rem;
+    padding: 0 2.6rem;
+    height: 5.2rem;
+    border: none;
+    background-color: $back_color;
+    cursor: pointer;
+
+
+    &:hover {
+      background-color: lighten($back_color, 10%);
+    }
+
+    &:active {
+      background-color: darken($back_color, 10%);
+    }
 
   }
+  .domain_check-info {
+    background-color: rgba(51, 51, 51, 0.9);
+    color: #fff;
+    border-bottom-left-radius: .8rem;
+    border-bottom-right-radius: .8rem;
+
+    text-align: center;
+    margin-top: -1rem;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+  }
+
+  .domain_indicator {
+    font-size: 1.6rem;
+
+  }
+
+  .domain_link {
+    font-size: 1.6rem;
+    margin-left: .5rem;
+    color: #77b53c;
+  }
+}
+
+.create_account-btn {
+  $back_color: #77b53c;
+  border: none;
+  background-color: $back_color;
+  font-size: 2.2rem;
+  height: 5.6rem;
+  padding: 0 4.6rem;
+  color: white;
+  font-weight: 700;
+  margin-top: 3.6rem;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: lighten($back_color, 10%);
+  }
+
+  &:active {
+    background-color: darken($back_color, 10%);
+  }
+}
+
+.down_arrow {
+  margin-top: 14rem;
+ padding-bottom: 6rem;
 }
 
 .nav_indicators {
