@@ -1,6 +1,5 @@
 @charset "UTF-8";
 /*Variables*/
-/*при ширине поля в 1092рх отрицательные марджины слева и справа по 6px в процентах это 0,54945*/
 /*General settings*/
 * {
   margin: 0;
@@ -11,9 +10,17 @@ html {
   /*Сделал 1rem = 10px для удобства подсчетов*/
   font-size: 62.5%; }
 
+body {
+  font: 1.4rem "PT Sans",Arial,Helvetica,sans-serif; }
+
 /*Utility classes*/
 .u-hide {
   display: none !important; }
+
+.u-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); }
 
 .u-btn {
   position: absolute;
@@ -41,12 +48,22 @@ html {
   margin: -4.5px; }
 
 .item-1-12 {
-  width: calc(100% / 12 - 4.5px * 2);
-  padding: 1rem;
-  margin: 0 4.5px; }
+  width: calc(100% / 12 - 4.5px * 2); }
+
+.item-2-12 {
+  width: calc(100% / 6 - 4.5px * 2); }
+
+.item-3-12 {
+  width: calc(100% / 4 - 4.5px * 2); }
+
+.item-8-12 {
+  width: calc(100% / 1.5 - 4.5px * 2); }
+
+.item-10-12 {
+  width: calc(100% / 1.2 - 4.5px * 2); }
 
 [class^="item-"] {
-  background-color: orange;
+  margin: 0 4.5px;
   /*&:not(:last-child) {
     margin-right: $grid-gap;
   }*/ }
@@ -54,28 +71,56 @@ html {
 @media (min-width: 1132px) {
   .row {
     margin: -6px; }
+  [class^="item-"] {
+    margin: 0 6px; }
   .item-1-12 {
-    width: calc(100% / 12 - 6px * 2);
-    margin: 0 6px; } }
+    width: calc(100% / 12 - 6px * 2); }
+  .item-2-12 {
+    width: calc(100% / 6 - 6px * 2); }
+  .item-3-12 {
+    width: calc(100% / 4 - 6px * 2); }
+  .item-8-12 {
+    width: calc(100% / 1.5 - 6px * 2); }
+  .item-10-12 {
+    width: calc(100% / 1.2 - 6px * 2); } }
 
 @media (max-width: 1132px) and (min-width: 995.5px) {
   .row {
     margin: -5.25px; }
+  [class^="item-"] {
+    margin: 0 5.25px; }
   .item-1-12 {
-    width: calc(100% / 12 - 5.25px * 2);
-    margin: 0 5.25px; } }
+    width: calc(100% / 12 - 5.25px * 2); }
+  .item-2-12 {
+    width: calc(100% / 6 - 5.25px * 2); }
+  .item-3-12 {
+    width: calc(100% / 4 - 5.25px * 2); }
+  .item-8-12 {
+    width: calc(100% / 1.5 - 5.25px * 2); }
+  .item-10-12 {
+    width: calc(100% / 1.2 - 5.25px * 2); } }
 
 @media (max-width: 995.5px) and (min-width: 859px) {
   .row {
     margin: -4.5px; }
+  [class^="item-"] {
+    margin: 0 4.5px; }
   .item-1-12 {
-    width: calc(100% / 12 - 4.5px * 2);
-    margin: 0 4.5px; } }
+    width: calc(100% / 12 - 4.5px * 2); }
+  .item-2-12 {
+    width: calc(100% / 6 - 4.5px * 2); }
+  .item-3-12 {
+    width: calc(100% / 4 - 4.5px * 2); }
+  .item-8-12 {
+    width: calc(100% / 1.5 - 4.5px * 2); }
+  .item-10-12 {
+    width: calc(100% / 1.2 - 4.5px * 2); } }
 
 /*Служебная сетка*/
 .pseudo_row {
+  margin-top: 1rem;
   position: absolute;
-  height: 100%;
+  height: 40rem;
   width: 100%;
   color: orange; }
 
@@ -97,22 +142,6 @@ html {
   height: 100%; }
 
 /*Служебная сетка. Конец*/
-.top {
-  font-family: "PT Sans", sans-serif;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #fff;
-  text-align: center; }
-  .top .jino-small-logo {
-    float: left;
-    height: 1.4rem; }
-  .top .top_domain {
-    margin-left: 1rem;
-    width: 1.2rem;
-    float: left; }
-  .top .top_center-txt {
-    width: 1.2px; }
-
 .header {
   /*убираем отступ для фона*/
   background-image: url(../img/background1.jpg);
@@ -120,6 +149,31 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top; }
+
+.top {
+  font-weight: bold;
+  text-transform: lowercase;
+  color: #fff;
+  padding-top: 2.5rem;
+  position: relative; }
+  .top .logo-inner {
+    padding: 1px; }
+  .top .jino-small-logo {
+    float: left;
+    margin-top: 1px;
+    display: inline-block; }
+  .top .top_domain {
+    display: inline-block;
+    margin-left: .5rem; }
+  .top .top_center-txt {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    white-space: nowrap;
+    letter-spacing: .18rem;
+    margin-top: 3px; }
+
+.main-title {
+  color: white; }
 
 .domain_check .domain_check-label {
   display: none; }

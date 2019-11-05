@@ -11,10 +11,6 @@ $item-min-margin: 4.5px;
 
 $column-width: 7.32601%;
 
-
-/*при ширине поля в 1092рх отрицательные марджины слева и справа по 6px в процентах это 0,54945*/
-
-
 @mixin clearfix {
   &:after {
     content: "";
@@ -34,10 +30,20 @@ html {
   font-size: 62.5%;
 }
 
+body {
+  font: 1.4rem "PT Sans",Arial,Helvetica,sans-serif;
+}
+
 /*Utility classes*/
 
 .u-hide {
   display: none !important;
+}
+
+.u-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .u-btn {

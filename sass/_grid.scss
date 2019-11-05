@@ -14,12 +14,27 @@
 
 .item-1-12 {
   width: calc(100% / 12 - #{$item-min-margin} * 2);
-  padding: 1rem;
-  margin: 0 $item-min-margin;
+}
+
+.item-2-12 {
+  width: calc(100% / 6 - #{$item-min-margin} * 2);
+}
+
+.item-3-12 {
+  width: calc(100% / 4 - #{$item-min-margin} * 2);
+}
+
+.item-8-12 {
+  width: calc(100% / 1.5 - #{$item-min-margin} * 2);
+}
+
+.item-10-12 {
+  width: calc(100% / 1.2 - #{$item-min-margin} * 2);
 }
 
 [class^="item-"] {
-  background-color: orange;
+  margin: 0 $item-min-margin;
+
   /*&:not(:last-child) {
     margin-right: $grid-gap;
   }*/
@@ -30,10 +45,30 @@
     margin: 0 -$item-max-margin;
   }
 
-  .item-1-12 {
-    width: calc(100% / 12 - #{$item-max-margin} * 2);
+  [class^="item-"] {
     margin: 0 $item-max-margin;
   }
+
+  .item-1-12 {
+    width: calc(100% / 12 - #{$item-max-margin} * 2);
+  }
+
+  .item-2-12 {
+    width: calc(100% / 6 - #{$item-max-margin} * 2);
+  }
+
+  .item-3-12 {
+    width: calc(100% / 4 - #{$item-max-margin} * 2);
+  }
+
+  .item-8-12 {
+    width: calc(100% / 1.5 - #{$item-max-margin} * 2);
+  }
+
+  .item-10-12 {
+    width: calc(100% / 1.2 - #{$item-max-margin} * 2);
+  }
+
 }
 
 @media (max-width: 1132px) and (min-width: 995.5px) {
@@ -41,10 +76,30 @@
     margin: 0 -$item-medium-margin;
   }
 
-  .item-1-12 {
-    width: calc(100% / 12 - #{$item-medium-margin} * 2);
+  [class^="item-"] {
     margin: 0 $item-medium-margin;
   }
+
+  .item-1-12 {
+    width: calc(100% / 12 - #{$item-medium-margin} * 2);
+  }
+
+  .item-2-12 {
+    width: calc(100% / 6 - #{$item-medium-margin} * 2);
+  }
+
+  .item-3-12 {
+    width: calc(100% / 4 - #{$item-medium-margin} * 2);
+  }
+
+  .item-8-12 {
+    width: calc(100% / 1.5 - #{$item-medium-margin} * 2);
+  }
+
+  .item-10-12 {
+    width: calc(100% / 1.2 - #{$item-medium-margin} * 2);
+  }
+
 }
 
 
@@ -53,17 +108,37 @@
     margin: 0 -$item-min-margin;
   }
 
+  [class^="item-"] {
+    margin: 0 $item-min-margin;
+  }
+
   .item-1-12 {
     width: calc(100% / 12 - #{$item-min-margin} * 2);
-    margin: 0 $item-min-margin;
+  }
+
+  .item-2-12 {
+    width: calc(100% / 6 - #{$item-min-margin} * 2);
+  }
+
+  .item-3-12 {
+    width: calc(100% / 4 - #{$item-min-margin} * 2);
+  }
+
+  .item-8-12 {
+    width: calc(100% / 1.5 - #{$item-min-margin} * 2);
+  }
+
+  .item-10-12 {
+    width: calc(100% / 1.2 - #{$item-min-margin} * 2);
   }
 }
 
 
 /*Служебная сетка*/
 .pseudo_row {
+  margin-top: 1rem;
   position: absolute;
-  height: 100%;
+  height: 40rem;
   width: 100%;
   color: orange;
 }
